@@ -20,7 +20,7 @@ require("lazy").setup({
 		}
 	},
 	{
-		"rose-pine/neovim", 
+		"rose-pine/neovim",
 		name = "rose-pine",
 		config = function()
 			vim.cmd("colorscheme rose-pine")
@@ -37,7 +37,7 @@ require("lazy").setup({
 			pcall(require("nvim-treesitter.install").update { with_sync = true })
 		end
 	},
-    
+
     "nvim-treesitter/playground",
 
     "theprimeagen/harpoon",
@@ -67,5 +67,11 @@ require("lazy").setup({
         }
     },
 
-    "ThePrimeagen/vim-be-good"
+    "ThePrimeagen/vim-be-good",
+
+    -- Debugging
+    "mfussenegger/nvim-dap",
+    "rcarriga/nvim-dap-ui",
+    "theHamsta/nvim-dap-virtual-text",
+    "mfussenegger/nvim-dap-python"
 })
