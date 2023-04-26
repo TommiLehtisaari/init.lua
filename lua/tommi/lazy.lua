@@ -73,5 +73,12 @@ require("lazy").setup({
     "mfussenegger/nvim-dap",
     "rcarriga/nvim-dap-ui",
     "theHamsta/nvim-dap-virtual-text",
-    "mfussenegger/nvim-dap-python"
+    "mfussenegger/nvim-dap-python",
+
+    {
+        "vuki656/package-info.nvim",
+        dependencies = {
+            {"MunifTanjim/nui.nvim"}
+        }
+    }
 })
