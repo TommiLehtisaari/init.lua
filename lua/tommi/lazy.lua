@@ -12,6 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+    -- Fuzzy finding
 	{
 		"nvim-telescope/telescope.nvim",
 		version = "*",
@@ -19,6 +20,8 @@ require("lazy").setup({
 			"nvim-lua/plenary.nvim"
 		}
 	},
+
+    -- Theme
 	{
 		"rose-pine/neovim",
 		name = "rose-pine",
@@ -44,6 +47,7 @@ require("lazy").setup({
 
     "mbbill/undotree",
 
+    -- Git plugin
     "tpope/vim-fugitive",
 
     {
@@ -67,13 +71,13 @@ require("lazy").setup({
         }
     },
 
-    "ThePrimeagen/vim-be-good",
+    -- For handling bracket / braces closing
+    "windwp/nvim-autopairs",
 
     -- Debugging
     "mfussenegger/nvim-dap",
     "rcarriga/nvim-dap-ui",
     "theHamsta/nvim-dap-virtual-text",
-    "mfussenegger/nvim-dap-python",
 
     {
         "vuki656/package-info.nvim",
@@ -82,6 +86,7 @@ require("lazy").setup({
         }
     },
 
+    -- Flutter
     {
         "akinsho/flutter-tools.nvim",
         lazy = false,
@@ -89,5 +94,8 @@ require("lazy").setup({
             "nvim-lua/plenary.nvim",
             "stevearc/dressing.nvim", -- optional for vim.ui.select
         },
-    }
+    },
+
+    -- Python
+    "mfussenegger/nvim-dap-python",
 })

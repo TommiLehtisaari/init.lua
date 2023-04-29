@@ -10,13 +10,10 @@ vim.keymap.set("n", "<leader>dr", ":lua require'dap'.repl.open()<CR>")
 vim.keymap.set("n", "<leader>dt", ":lua require'dap-go'.debug_test()<CR>")
 
 require("nvim-dap-virtual-text").setup()
-require("dapui").setup({
-
-})
+require("dapui").setup()
 
 require('dap-python').setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
 
-vim.keymap.set("n", "<leader>du", function ()
-require("dapui").toggle()
-end)
+vim.keymap.set("n", "<leader>du", function () require("dapui").toggle() end)
 vim.keymap.set("n", "<leader>dx", ":lua require'dapui'.close()")
+
