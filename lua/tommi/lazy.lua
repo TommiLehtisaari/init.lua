@@ -12,90 +12,98 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    -- Fuzzy finding
-	{
-		"nvim-telescope/telescope.nvim",
-		version = "*",
-		dependencies = {
-			"nvim-lua/plenary.nvim"
-		}
-	},
+  -- Fuzzy finding
+  {
+    "nvim-telescope/telescope.nvim",
+    version = "*",
+    dependencies = {
+      "nvim-lua/plenary.nvim"
+    }
+  },
 
-    -- Theme
-	{
-		"rose-pine/neovim",
-		name = "rose-pine",
-		config = function()
-			vim.cmd("colorscheme rose-pine")
-		end
-	},
+  -- Theme
+  {
+    "rose-pine/neovim",
+    name = "rose-pine",
+    config = function()
+      vim.cmd("colorscheme rose-pine")
+    end
+  },
 
-	-- Highlight, edit, and navigate code
-	{
-		"nvim-treesitter/nvim-treesitter",
-		dependencies = {
-			"nvim-treesitter/nvim-treesitter-textobjects",
-		},
-		config = function()
-			pcall(require("nvim-treesitter.install").update { with_sync = true })
-		end
-	},
-
-    "nvim-treesitter/playground",
-
-    "theprimeagen/harpoon",
-
-    "mbbill/undotree",
-
-    -- Git plugin
-    "tpope/vim-fugitive",
-
-    {
-        "VonHeikemen/lsp-zero.nvim",
-        branch = "v2.x",
-        dependencies = {
-            -- LSP Support
-            {"neovim/nvim-lspconfig"},             -- Required
-            {                                      -- Optional
-                "williamboman/mason.nvim",
-                build = function()
-                    pcall(vim.cmd, "MasonUpdate")
-                end,
-            },
-            {"williamboman/mason-lspconfig.nvim"}, -- Optional
-
-            -- Autocompletion
-            {"hrsh7th/nvim-cmp"},     -- Required
-            {"hrsh7th/cmp-nvim-lsp"}, -- Required
-            {"L3MON4D3/LuaSnip"},     -- Required
-        }
+  -- Highlight, edit, and navigate code
+  {
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter-textobjects",
     },
+    config = function()
+      pcall(require("nvim-treesitter.install").update { with_sync = true })
+    end
+  },
 
-    -- For handling bracket / braces closing
-    "windwp/nvim-autopairs",
+  "nvim-treesitter/playground",
 
-    -- Debugging
-    "mfussenegger/nvim-dap",
-    "rcarriga/nvim-dap-ui",
-    "theHamsta/nvim-dap-virtual-text",
+  "theprimeagen/harpoon",
 
-    {
-        "vuki656/package-info.nvim",
-        dependencies = {
-            {"MunifTanjim/nui.nvim"}
-        }
+  "mbbill/undotree",
+
+  -- Git plugin
+  "tpope/vim-fugitive",
+
+  {
+    "VonHeikemen/lsp-zero.nvim",
+    branch = "v2.x",
+    dependencies = {
+      -- LSP Support
+      { "neovim/nvim-lspconfig" }, -- Required
+      {                            -- Optional
+        "williamboman/mason.nvim",
+        build = function()
+          pcall(vim.cmd, "MasonUpdate")
+        end,
+      },
+      { "williamboman/mason-lspconfig.nvim" }, -- Optional
+
+      -- Autocompletion
+      { "hrsh7th/nvim-cmp" },     -- Required
+      { "hrsh7th/cmp-nvim-lsp" }, -- Required
+      { "L3MON4D3/LuaSnip" },     -- Required
+    }
+  },
+
+  -- For handling bracket / braces closing
+  "windwp/nvim-autopairs",
+
+  -- Debugging
+  "mfussenegger/nvim-dap",
+  "rcarriga/nvim-dap-ui",
+  "theHamsta/nvim-dap-virtual-text",
+
+  {
+    "vuki656/package-info.nvim",
+    dependencies = {
+      { "MunifTanjim/nui.nvim" }
+    }
+  },
+
+  {
+    "andythigpen/nvim-coverage",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" }
+    }
+  },
+
+  -- Flutter
+  {
+    "akinsho/flutter-tools.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "stevearc/dressing.nvim", -- optional for vim.ui.select
     },
+  },
 
-    -- Flutter
-    {
-        "akinsho/flutter-tools.nvim",
-        lazy = false,
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "stevearc/dressing.nvim", -- optional for vim.ui.select
-        },
-    },
+  -- Python
+  "mfussenegger/nvim-dap-python",
 
-    -- Python
-    "mfussenegger/nvim-dap-python",
 })
