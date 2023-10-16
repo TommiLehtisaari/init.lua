@@ -43,7 +43,11 @@ require("lazy").setup({
 
   "nvim-treesitter/playground",
 
-  "theprimeagen/harpoon",
+  {
+    "theprimeagen/harpoon",
+    dependencies = {
+      "nvim-lua/plenary.nvim" }
+  },
 
   "mbbill/undotree",
 
