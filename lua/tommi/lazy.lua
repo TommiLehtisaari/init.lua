@@ -97,6 +97,13 @@ require("lazy").setup({
     }
   },
 
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
+
   -- Flutter
   {
     "akinsho/flutter-tools.nvim",
@@ -107,7 +114,7 @@ require("lazy").setup({
     },
   },
 
-  -- Plugin to display references, definitions, and implementations of document symbols 
+  -- Plugin to display references, definitions, and implementations of document symbols
   {
     'Wansmer/symbol-usage.nvim',
     event = 'BufReadPre', -- need run before LspAttach if you use nvim 0.9. On 0.10 use 'LspAttach'
