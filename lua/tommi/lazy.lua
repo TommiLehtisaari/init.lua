@@ -43,6 +43,8 @@ require("lazy").setup({
 
   "nvim-treesitter/playground",
 
+  "nvim-neotest/nvim-nio",
+
   {
     "theprimeagen/harpoon",
     dependencies = {
