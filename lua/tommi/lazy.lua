@@ -45,6 +45,8 @@ require("lazy").setup({
 
   "nvim-neotest/nvim-nio",
 
+  "nvim-java/nvim-java",
+
   {
     "theprimeagen/harpoon",
     dependencies = {

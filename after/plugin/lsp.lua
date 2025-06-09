@@ -49,6 +49,9 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
+require('java').setup()
+require('lspconfig').jdtls.setup({})
+
 lsp.setup()
 
 vim.diagnostic.config({
