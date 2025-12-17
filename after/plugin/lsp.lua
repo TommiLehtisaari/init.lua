@@ -2,10 +2,6 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-  'tsserver',
-})
-
 require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
 local cmp = require('cmp')
@@ -49,8 +45,8 @@ lsp.on_attach(function(_, bufnr)
   vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
 
-require('java').setup()
-require('lspconfig').jdtls.setup({})
+-- require('java').setup()
+-- require('lspconfig').jdtls.setup({})
 
 lsp.setup()
 
